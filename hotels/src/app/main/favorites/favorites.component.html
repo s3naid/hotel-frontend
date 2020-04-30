@@ -1,0 +1,10 @@
+<div *ngIf="favouriteHotels">
+    <h2>This is Your list of favorite hotels:</h2>
+    <div *ngFor="let hotel of favouriteHotels">
+        <div class="name">
+            <h4>{{ hotel.hotel.name }}</h4> 
+            <fa-icon [icon]="faTrash" (click)="deleteFavorite(hotel)"></fa-icon>
+        </div>
+        <h5>{{ hotel.hotel.geolocation }}</h5>
+    </div>
+</div>

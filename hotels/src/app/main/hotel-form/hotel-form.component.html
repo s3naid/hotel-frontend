@@ -1,0 +1,15 @@
+<form [formGroup]="hotelForm" (ngSubmit)="saveForm()">
+    <label>Name</label><br>
+    <input type="text" formControlName="name"/><br>
+
+    <label>Address</label><br>
+    <input type="text" formControlName="address"/><br><br>
+
+    <label>GeoLocation</label><br>
+    <input type="text" formControlName="geolocation"/><br><br>
+
+    <label>Description</label><br>
+    <input type="text" formControlName="description"/><br><br>
+
+    <button type="submit">Save</button>
+</form>

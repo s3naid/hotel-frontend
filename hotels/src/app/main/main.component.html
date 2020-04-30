@@ -1,0 +1,19 @@
+<div class="main">
+    <app-hotel-list [hotels]="hotels" 
+    (selectedHotel)="showHotelDetails($event)" 
+    (editSelectedHotel)="editHotelDetails($event)"
+    (newHotel)="createNewHotel()"
+    (newSearch)="searchHotel($event)"
+    (hotelReviewList)="displayReviews($event)"
+    ></app-hotel-list>
+    <div>
+        <app-hotel-detail [hotel]="selectedHotel" (newFavorite)="addHoteltoFav($event)" (newReviewedHotel)="newReviewedHotel($event)"></app-hotel-detail>
+        <app-favorites [favouriteHotels]="favouriteHotels" (removedFavoriteMovie)="removeFavorite($event)"></app-favorites>
+        <app-hotel-form *ngIf="editedHotel" [editHotel]="editedHotel" (hotelCreated)="refreshList($event)"></app-hotel-form>  
+    </div>
+    <div>
+        <button (click)="logout()">Logout, {{ logedUser }}</button>
+        <button (click)="favHotelList()">View My Favourite Hotels</button>  
+    </div>
+
+</div>

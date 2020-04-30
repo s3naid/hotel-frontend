@@ -1,0 +1,7 @@
+<form [formGroup]="reviewForm" (ngSubmit)="saveForm()">
+    <label>Review</label><br>
+    <input type="text" formControlName="reviewText"/><br>
+    <label>Rating</label><br>
+    <input type="number" formControlName="rating"/><br>
+    <button type="submit">Save</button>
+</form>

@@ -1,0 +1,12 @@
+<form #SearchForm [formGroup]="searchForm">
+   <label>Search hotels by name, address or location (ie. Sarajevo)</label><br>
+   <input type="text" formControlName="search"/>
+   <button type="button" (click)="submitSearchForm()">Search</button>
+   <button type="button" (click)="clearSearch(); SearchForm.reset()">Clear search</button>
+</form>
+
+<div *ngFor="let hotel of hotels" class="hotel-item">
+   <h3 (click)="selectHotel(hotel)" >{{ hotel.name }}</h3>
+   <fa-icon [icon]="faEdit" (click)="editHotel(hotel)"></fa-icon>
+</div>
+<button (click)="createNewHotel()">New Hotel</button>

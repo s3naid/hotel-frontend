@@ -1,0 +1,20 @@
+<div *ngIf="hotel">
+    <h3>Info:</h3>
+    Name: {{ hotel.name }} <br>
+    Address: {{ hotel.address }} <br>
+    Location: {{ hotel. geolocation }} <br>
+    Description: {{ hotel.description }} <br>
+    Overall hotel rating: {{ hotel.overall_rating }} <br>
+
+    <h3>Hotel reviews:</h3>
+    <div *ngFor="let review of hotel.hotel_reviews" >
+        {{ review }}
+    </div><br>
+
+    <button (click)="addHoteltoFav()">Add to favorites</button><br>
+    <button (click)="reviewMode = true">Write a Review</button>
+    <app-hotel-review *ngIf="reviewMode" [hotel]="hotel" (reviewedHotel)="reviewMode=false; newReview($event)" ></app-hotel-review>
+</div>
+
+
+
